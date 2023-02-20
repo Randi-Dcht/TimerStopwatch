@@ -1,11 +1,8 @@
 package gui;
 
-import states.Context;
 import states.EventListener;
-
-import javax.swing.JFrame;
-import java.awt.Container;
-import java.awt.GridLayout;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * @author tommens
