@@ -1,5 +1,6 @@
 package states;
 
+import gui.TestGUIAbstract;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,7 +9,7 @@ import states.Context;
 import states.stopwatch.*;
 import states.timer.*;
 
-public class TestScenarios {
+public class TestScenarios extends TestGUIAbstract {
 
 	Context c;
 	
@@ -22,7 +23,8 @@ public class TestScenarios {
     
   //This is more a kind of integration test than a real unit test	
   @Test
-  public void completeScenario() {
+  public void completeScenario()
+  {
 	  assertEquals(IdleTimer.Instance(),c.currentState);
 	  assertEquals(0,AbstractTimer.getMemTimer());
 	  
@@ -91,6 +93,56 @@ public class TestScenarios {
 	  assertSame(IdleTimer.Instance(), c.currentState);
 	  assertEquals("value of memTimer ", 2, AbstractTimer.getMemTimer());
 	  assertEquals("value of timer ", 0, AbstractTimer.getTimer());	 	  
+	  }
+
+	  @Test
+	public void testInstance()
+	  {
+		  LaptimeStopwatch ls = LaptimeStopwatch.Instance();
+		  assertNotNull(ls);
+	  }
+
+	  @Test
+	public void testUp()
+	  {
+		  LaptimeStopwatch ls = LaptimeStopwatch.Instance();
+		  ClockState cs = ls.up();
+		  assertEquals(RunningStopwatch.Instance(), cs);
+	  }
+
+	  @Test
+	public void testGetUpText()
+	  {
+		  LaptimeStopwatch ls = LaptimeStopwatch.Instance();
+		  String s = ls.getUpText();
+		  assertEquals("unsplit", s);
+	  }
+/*
+	  @Test
+	public void testEntry()
+	  {
+		  LaptimeStopwatch ls = LaptimeStopwatch.Instance();
+		  ls.entry();
+		  assertEquals(0, AbstractStopwatch.getLapTime());
+		  assertEquals(5, ls.timeout);
+	  }
+
+	  @Test
+	public void testDoIt()
+	  {
+		  LaptimeStopwatch ls = LaptimeStopwatch.Instance();
+		  ls.entry();
+		  ls.doIt();
+		  assertEquals(1, AbstractStopwatch.getTotalTime());
+		  assertEquals(4, ls.timeout);
+	  }
+*/
+	  @Test
+	public void testGetDisplayString()
+	  {
+		  LaptimeStopwatch ls = LaptimeStopwatch.Instance();
+		  String s = ls.getDisplayString();
+		  assertEquals("lapTime = 0", s);
 	  }
 
 }

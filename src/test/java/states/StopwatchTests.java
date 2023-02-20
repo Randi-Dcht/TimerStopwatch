@@ -4,6 +4,7 @@ import states.ClockState;
 import states.Context;
 import states.Mode;
 import states.stopwatch.AbstractStopwatch;
+import states.stopwatch.LaptimeStopwatch;
 import states.stopwatch.ResetStopwatch;
 import states.timer.AbstractTimer;
 import org.junit.*;
@@ -54,5 +55,28 @@ public class StopwatchTests {
 		 */
 		assertEquals(current, newState.left());
 	}
+
+	@Test
+	public void testCallInstance() {
+		current = LaptimeStopwatch.Instance();
+		assertNotNull(current);
+	}
+
+	@Test
+	public void testUpEvent() {
+		current = AbstractStopwatch.Instance();
+		ClockState newState = current.up();
+		assertNotEquals(AbstractStopwatch.Instance(), newState);
+	}
+
+
+	@Test
+	public void testDoIt() {
+		current = AbstractStopwatch.Instance();
+		ClockState newState = current.doIt();
+		assertEquals(AbstractStopwatch.Instance(), newState);
+	}
+
+
 
 }
