@@ -2,6 +2,7 @@ import gui.AbstractGUI;
 import gui.SwingGUI;
 import states.Context;
 
+@SuppressWarnings("BusyWait")
 public class ChronometerMain {
     
 	private AbstractGUI g;
@@ -10,6 +11,7 @@ public class ChronometerMain {
     // The method run() ensures that with a given frequency
     // the state machine's actions are executed with tick() and
     // the ui is updated accordingly with updateUIText().    
+	@SuppressWarnings("BusyWait")
 	private void run() {
         // infinite loop that asks the current state to do whatever it needs to do
         // and that updates the graphical user interface accordingly

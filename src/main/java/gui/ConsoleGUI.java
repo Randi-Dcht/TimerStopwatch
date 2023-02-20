@@ -2,11 +2,8 @@ package gui;
 
 import states.Context;
 import states.EventListener;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 // UNFINISHED WORK: THIS CLASS NEEDS TO BE REWRITTEN TO USE ANOTHER GUI
 // (NOT SWING, BUT DOING EVERYTHING DIRECTLY FROM THE CONSOLE.
