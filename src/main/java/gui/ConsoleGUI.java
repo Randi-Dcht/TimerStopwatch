@@ -42,21 +42,9 @@ public class ConsoleGUI extends AbstractGUI {
     }
 
     protected void addEventListener() {
-        b1.addActionListener(new ActionListener() { 
-        	public void actionPerformed(ActionEvent e) {
-        		observer.left();
-                }
-        	});
-        b2.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-        		observer.up();
-                }
-        	});
-        b3.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-        		observer.right();
-                }
-        	});
+        b1.addActionListener(e -> observer.left());
+        b2.addActionListener(e -> observer.up());
+        b3.addActionListener(e -> observer.right());
    }
     
     public void updateUI(Context c) {

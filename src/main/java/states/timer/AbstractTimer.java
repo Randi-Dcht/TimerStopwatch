@@ -5,6 +5,7 @@ import states.stopwatch.*;
 
 // Timer is a composite statechart
 // Subclasses of Timer correspond to the states contained in the composite
+@SuppressWarnings("StaticInitializerReferencesSubClass")
 public abstract class AbstractTimer extends ClockState {
 
 	//This is a composite state, so we need to defer its

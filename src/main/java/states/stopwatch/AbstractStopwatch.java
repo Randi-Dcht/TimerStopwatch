@@ -3,6 +3,7 @@ package states.stopwatch;
 import states.*;
 import states.timer.*;
 
+@SuppressWarnings("StaticInitializerReferencesSubClass")
 public abstract class AbstractStopwatch extends ClockState {
 
 	//This is a composite state, so we need to defer its
