@@ -13,6 +13,7 @@ public class ConsoleGUI extends AbstractGUI {
 
     public ConsoleGUI(EventListener o) { super(o); }
     
+    @Override
     protected void initGUI() {
         b1 = new JButton();
         b2 = new JButton();
@@ -38,6 +39,7 @@ public class ConsoleGUI extends AbstractGUI {
         myFrame.setVisible(true);
     }
 
+    @Override
     protected void addEventListener() {
         b1.addActionListener(e -> observer.left());
         b2.addActionListener(e -> observer.up());
@@ -45,10 +47,9 @@ public class ConsoleGUI extends AbstractGUI {
    }
     
     public void updateUI(Context c) {
-    	System.out.println(
-    			"Running in mode " + c.getModeText() +
-    			" in state " + c.getStateText() +
-    			" with value " + c.getDisplayText() );
+    	System.out.print("Running in mode " + c.getModeText());
+        System.out.print(" in state " + c.getStateText());
+        System.out.print(" with value " + c.getDisplayText());
     }
    
 }

@@ -21,6 +21,7 @@ public class HeadlessGUI extends AbstractGUI {
 
     public HeadlessGUI(EventListener o) { super(o); }
     
+    @Override
     protected void initGUI() {
         //Notice that we initialise three buttons and three labels but we never display them.
         b1 = new JButton();
@@ -31,6 +32,7 @@ public class HeadlessGUI extends AbstractGUI {
         myText3 = new JLabel();
     }
 
+    @Override
     protected void addEventListener() {
     	// compact way of adding action listeners (since Java8, using lambda expressions)
     	b1.addActionListener(e -> observer.left());

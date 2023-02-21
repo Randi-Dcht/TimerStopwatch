@@ -4,6 +4,8 @@ import states.ClockState;
 
 public class SetTimer extends AbstractTimer {
 
+    public static final int INCREMENT = 5;
+
 	// use Singleton design pattern
 	private SetTimer() {} // make constructor invisible to clients
     private static SetTimer instance = null;
@@ -25,7 +27,7 @@ public class SetTimer extends AbstractTimer {
 
 	@Override
 	public ClockState up() {
-		memTimer = memTimer +5; // increase the memory with 5
+		memTimer = memTimer + INCREMENT; // increase the memory with 5
 		return this; // do not switch to a different state
     }
     public String getUpText() { return "inc 5"; }

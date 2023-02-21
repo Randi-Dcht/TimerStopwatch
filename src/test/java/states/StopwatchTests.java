@@ -19,7 +19,7 @@ public class StopwatchTests {
 	public void setup() {
         context = new Context(); // create the state machine context
         AbstractStopwatch.resetInitialValues();
-        context.currentState = AbstractStopwatch.Instance();
+        context.setCurrentState(AbstractStopwatch.Instance());
 	}
 		
 	@Test
@@ -29,7 +29,7 @@ public class StopwatchTests {
 		 * its currentState will be inialised with the initial state
 		 * of timer, i.e. the IdleTimer state.
 		 */
-		current = context.currentState;
+		current = context.getCurrentState();
 		
 	    assertEquals(Mode.stopwatch, current.getMode());
 	    assertSame(ResetStopwatch.Instance(), current);

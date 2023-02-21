@@ -7,11 +7,19 @@ public class Context implements EventListener {
 	
     //private JLabel display;
   	    
-    public ClockState currentState;
+    private ClockState currentState;
+
+    public ClockState getCurrentState() {
+    	return currentState;
+    }
+
+    public void setCurrentState(ClockState currentState) {
+    	this.currentState = currentState;
+    }
      	
     public Context() {
     	currentState = AbstractTimer.Instance(); // set initial state
-        AbstractTimer.historyState = AbstractTimer.Instance();
+        AbstractTimer.setHistoryState(AbstractTimer.Instance());
         	// set history state of Timer composite statechart
         AbstractStopwatch.historyState = AbstractStopwatch.Instance();
     	// set history state of Stopwatch composite statechart        

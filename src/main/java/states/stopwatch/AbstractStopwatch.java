@@ -42,7 +42,7 @@ public abstract class AbstractStopwatch extends ClockState {
     	// before exiting the Stopwatch STM
     	historyState = this;
     	// go to the history state of the Timer STM
-    	return transition(AbstractTimer.historyState);    	
+    	return transition(AbstractTimer.getHistoryState());
     }
     
 	public Mode getMode() {

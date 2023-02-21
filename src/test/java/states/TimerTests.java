@@ -25,7 +25,7 @@ public class TimerTests {
 		 * its currentState will be initialised with the initial state
 		 * of timer, i.e. the IdleTimer state.
 		 */
-		current = context.currentState;
+		current = context.getCurrentState();
 		
 	    assertEquals(Mode.timer, current.getMode());
 	    assertSame(IdleTimer.Instance(), current);

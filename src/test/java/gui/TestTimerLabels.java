@@ -9,7 +9,7 @@ public class TestTimerLabels extends TestGUIAbstract {
 
 	@Test
 	public void testIdleTimerLabels() {
-		c.currentState = IdleTimer.Instance();
+		c.setCurrentState(IdleTimer.Instance());
 		g.updateUI(c);
 		assertEquals(g.b1.getText(),c.getLeftText(), "button 1 for state IdleTimer ");
 		assertEquals(g.b2.getText(),c.getUpText(), "button 2 for state IdleTimer ");
@@ -18,7 +18,7 @@ public class TestTimerLabels extends TestGUIAbstract {
 	
 	@Test
 	public void testPausedTimerLabels() {
-		c.currentState = PausedTimer.Instance();
+		c.setCurrentState(PausedTimer.Instance());
 		g.updateUI(c);
 		assertEquals(g.b1.getText(),c.getLeftText());
 		assertEquals( g.b2.getText(),c.getUpText());
@@ -27,7 +27,7 @@ public class TestTimerLabels extends TestGUIAbstract {
 	
 	@Test
 	public void testRingingTimerLabels() {
-		c.currentState = RingingTimer.Instance();
+		c.setCurrentState(RingingTimer.Instance());
 		g.updateUI(c);
 		assertEquals( g.b1.getText(),c.getLeftText());
 		assertEquals( g.b2.getText(),c.getUpText());
@@ -36,7 +36,7 @@ public class TestTimerLabels extends TestGUIAbstract {
 	
 	@Test
 	public void testRunningTimerLabels() {
-		c.currentState = RunningTimer.Instance();
+		c.setCurrentState(RunningTimer.Instance());
 		g.updateUI(c);
 		assertEquals( g.b1.getText(),c.getLeftText());
 		assertEquals( g.b2.getText(),c.getUpText());
@@ -45,7 +45,7 @@ public class TestTimerLabels extends TestGUIAbstract {
 	
 	@Test
 	public void testSetTimerLabels() {
-		c.currentState = SetTimer.Instance();
+		c.setCurrentState(SetTimer.Instance());
 		g.updateUI(c);
 		assertEquals( g.b1.getText(),c.getLeftText());
 		assertEquals(g.b2.getText(),c.getUpText());

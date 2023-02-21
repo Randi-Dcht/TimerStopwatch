@@ -11,8 +11,18 @@ public abstract class AbstractTimer extends ClockState {
 	//This is a composite state, so we need to defer its
 	//creation to its initial substate IdleTimer
 	public static final AbstractTimer initialState = IdleTimer.Instance();
-	public static AbstractTimer historyState;
-	
+	private static AbstractTimer historyState;
+
+	public static AbstractTimer getHistoryState()
+	{
+		return historyState;
+	}
+
+	public static void setHistoryState(AbstractTimer historyState)
+	{
+		AbstractTimer.historyState = historyState;
+	}
+
 	// timer and memTimer need to be static, since their values
 	// need to be shared between all Timer substates.
 	protected static int timer;

@@ -12,6 +12,7 @@ public class SwingGUI extends HeadlessGUI {
 
     public SwingGUI(EventListener o) { super(o); }
     
+    @Override
     protected void initGUI() {
         super.initGUI();
 

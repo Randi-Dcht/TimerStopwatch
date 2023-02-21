@@ -5,6 +5,7 @@ import states.ClockState;
 public class LaptimeStopwatch extends ActiveStopwatch {
     
 	private int timeout;
+    public static final int TIMEOUT = 5;
 	
 	// use Singleton design pattern
     private LaptimeStopwatch() {}
@@ -24,7 +25,7 @@ public class LaptimeStopwatch extends ActiveStopwatch {
     @Override
     protected void entry() {
         lapTime = totalTime;
-        timeout = 5; // is used to return to RunningStopwatch state after a timeout of 5 seconds    	
+        timeout = TIMEOUT; // is used to return to RunningStopwatch state after a timeout of 5 seconds
     }
     
     @Override

@@ -16,7 +16,7 @@ public class IdleTest {
 	public void setUp() {
 		// reset the initial values of timer to avoid inferences between different consecutive tests
 		context = new Context();
-		context.currentState = IdleTimer.Instance(); // because we are testing the IdleTimer state here...
+		context.setCurrentState(IdleTimer.Instance()); // because we are testing the IdleTimer state here...
 		AbstractTimer.resetInitialValues();
 	}
 
@@ -25,7 +25,7 @@ public class IdleTest {
 	public void testSingletonDP() {
 		// the initial state of the statechart should be an IdleTimer object
 		// that is exactly the same object as the "singleton" instance of the IdleTimer state
-		assertSame(IdleTimer.Instance(),context.currentState);
+		assertSame(IdleTimer.Instance(),context.getCurrentState());
 	}
 
 	@Test
@@ -35,7 +35,7 @@ public class IdleTest {
 		   while memTimer > 0 in order to transition to ActiveTimer */
 		assertEquals( 0, AbstractTimer.getTimer());
 		assertEquals( 0, AbstractTimer.getMemTimer());
-		assertSame(context.currentState, context.currentState.up());		
+		assertSame(context.getCurrentState(), context.getCurrentState().up());
 	}
 
 	@Test
@@ -59,7 +59,7 @@ public class IdleTest {
 	@Test
 	public void testRight() {		
 		// test whether the right() event brings us to the SetTimer state
-		assertSame(SetTimer.Instance(), context.currentState.right());
+		assertSame(SetTimer.Instance(), context.getCurrentState().right());
 	}
 
 }
