@@ -23,7 +23,7 @@ public class HeadlessGUI extends AbstractGUI {
     
     @Override
     protected void initGUI() {
-        //Notice that we initialise three buttons and three labels but we never display them.
+        //Notice that we initialise three buttons and three labels, but we never display them.
         b1 = new JButton();
         b2 = new JButton();
         b3 = new JButton();
